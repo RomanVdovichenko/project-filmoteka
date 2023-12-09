@@ -1,0 +1,6 @@
+.active::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #FF001B;
+}

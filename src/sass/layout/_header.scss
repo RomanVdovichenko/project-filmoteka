@@ -1,0 +1,141 @@
+.header {
+  max-width: 480px;
+  height: 230px;
+  margin: 0 auto;
+  background-image:
+    url(../images/bg-home/bgh-m.png),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.header__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.header__text {
+  display: none;
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  margin-left: 8px;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__link {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+
+  &:first-child {
+    margin-right: 40px;
+  }
+}
+
+.header__form {
+  max-width: 336px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  margin: 54px auto 0;
+  border-bottom: 0.5px solid #fff;
+}
+
+.header__input {
+  border: none;
+  background-color: inherit;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  padding: 0 1px;
+  color: #fff;
+
+  &::placeholder {
+    color: #fff;
+  }
+}
+
+.header__btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header__error {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FF001B;
+  max-width: 336px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+    height: 216px;
+    background-image:
+      url(../images/bg-home/bgh-t.png),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  }
+
+  .header__text {
+    display: inline-block;
+  }
+
+  .header__form {
+    margin: 40px auto 0;
+  }
+
+  .header__error {
+    max-width: 393px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    max-width: 1280px;
+    background-image:
+      url(../images/bg-home/bgh-d.png),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  }
+
+  .header__form {
+    max-width: 394px;
+  }
+}
