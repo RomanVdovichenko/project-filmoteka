@@ -10,6 +10,18 @@
   opacity: 0.9;
 }
 
+.header-lib {
+  max-width: 480px;
+  height: 230px;
+  margin: 0 auto;
+  background-image:
+    url(../images/bg-library/bgl-m.png),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+}
+
 .header__box {
   display: flex;
   justify-content: space-between;
@@ -104,12 +116,53 @@
   padding-top: 16px;
 }
 
+.header-lib__box-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.header-lib__box:first-child {
+  margin-right: 20px;
+}
+
+.header-lib__btn {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  padding: 14px 36px 12px;
+  color: #fff;
+  background-color: inherit;
+}
+
+.header-lib__btn:hover,
+.header-lib__btn:focus {
+  background: #FF6B01;
+  box-shadow: 0px 8px 43px 0px #FF6B0199;
+  border: none;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     max-width: 768px;
     height: 216px;
     background-image:
       url(../images/bg-home/bgh-t.png),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  }
+
+  .header-lib {
+    max-width: 768px;
+    height: 216px;
+    background-image:
+      url(../images/bg-library/bgl-t.png),
       linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
   }
 
@@ -125,6 +178,18 @@
     max-width: 393px;
     padding-top: 20px;
   }
+
+  .header-lib__box-btn {
+    margin-top: 40px;
+  }
+
+  .header-lib__box:first-child {
+    margin-right: 32px;
+  }
+
+  .header-lib__btn {
+    padding: 13px 48px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -135,7 +200,22 @@
       linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
   }
 
+  .header-lib {
+    max-width: 1280px;
+    background-image:
+      url(../images/bg-library/bgl-d.png),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  }
+
   .header__form {
     max-width: 394px;
+  }
+
+  .header-lib__box:first-child {
+    margin-right: 16px;
+  }
+
+  .header-lib__btn {
+    padding: 13px 42px 12px;
   }
 }

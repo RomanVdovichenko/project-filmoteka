@@ -1,0 +1,29 @@
+.pagination {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination__btn {
+    border: none;
+    border-radius: 5px;
+    background: #F7F7F7;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.pagination__list {
+    display: flex;
+    list-style: none;
+}
+
+.pagination__item {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 12px 13px;
+}
