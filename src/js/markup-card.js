@@ -22,10 +22,13 @@
 // ];
 
 export function markup(arr1, arr2) {
-    const markup = arr2.map(item => {
+    const arrFilter = arr2.filter(item => { 
+        return item.poster_path !== null && item.genre_ids.length !== 0
+    });
+    const markup = arrFilter.map(item => {
         let genre = '';
-        for (let i = 0; i < item.genre_ids.length; i += 1) {
-            for (let j = 0; j < arr1.length; j += 1) {
+        for (let i = 0; i < item.genre_ids.length; i ++) {
+            for (let j = 0; j < arr1.length; j ++) {
                 if (arr1[j].id === item.genre_ids[i]) {
                     if (i < item.genre_ids.length -1 ) {
                         genre += arr1[j].name + ',' + ' ';

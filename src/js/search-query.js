@@ -5,7 +5,7 @@ const apiKey = '13896f610c2b15042c451786ce84a901';
 
 export const moviesApi = async(page) => {
     const respons = await axios.get(`/3/trending/movie/day?api_key=${apiKey}&page=${page}`);
-    return respons.data.results;
+    return respons.data;
 }
 
 export const genresList = async () => {
@@ -30,7 +30,7 @@ export const movieReviewsApi = async (id) => {
 
 export const movieSearchApi = async (search) => {
     const respons = await axios.get(`/3/search/movie?api_key=${apiKey}&query=${search}`);
-    return respons.data.results;
+    return respons.data;
 }
 
 // &append_to_response=videos,images
