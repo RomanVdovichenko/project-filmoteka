@@ -28,8 +28,8 @@ export const movieReviewsApi = async (id) => {
     return respons.data.results;
 }
 
-export const movieSearchApi = async (search) => {
-    const respons = await axios.get(`/3/search/movie?api_key=${apiKey}&query=${search}`);
+export const movieSearchApi = async (page, search) => {
+    const respons = await axios.get(`/3/search/movie?api_key=${apiKey}&query=${search}&page=${page}`);
     return respons.data;
 }
 

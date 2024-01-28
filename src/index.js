@@ -1,51 +1,32 @@
 
-import { markup } from './js/markup-card';
 import { onTrending } from './js/onTrending';
+import { onSearch } from './js/onSearch';
+import { onInput } from './js/onInput';
 
-const trendMovie = document.querySelector('#trending');
-const trendSearch = document.querySelector('#trend');
+const home = document.querySelector('#trend');
 const logo = document.querySelector('#logo');
 const form = document.querySelector('#search-form');
-const searchBtn = document.querySelector('#search');
-const errorSeach = document.querySelector('.header__error');
-const paginationEl = document.querySelector('.pagination');
+let c = 0;
 
-trendSearch.addEventListener('click', onTrending);
-logo.addEventListener('click', onTrending);
-form.addEventListener('input', onInput);
+if (c === 0) {
+    c += 1;
+    onTrending();
+}
+console.log(c);
+form.addEventListener('input', () => {
+    if (c !== 0) { c = 0 };
+    onInput();
+});
 form.addEventListener('submit', onSearch);
-
-onTrending();
-
-function onInput() { 
-    searchBtn.removeAttribute('disabled');
-    trendMovie.innerHTML = '';
-    errorSeach.classList.add('none');
-    paginationEl.classList.add('none');
-};
-
-async function onSearch(evt) {
-    evt.preventDefault();
-    searchBtn.setAttribute('disabled', '');
-    let inputQuery = form.elements.searchQuery.value.trim();
-    console.log(inputQuery);
-    if (!inputQuery) {
-        errorSeach.classList.remove('none');
-        return
-    }
-
-    try {
-        const arr1 = await genresList();
-        const arr2 = await movieSearchApi(inputQuery);
-        console.log(arr2);
-        if (arr2.results.length === 0) {
-            errorSeach.classList.remove('none');
-            return
-        }
-        trendMovie.innerHTML = markup(arr1, arr2.results);
-        paginationEl.classList.remove('none');
-    }
-    catch (err) {
-        console.log(err);
-    }
- };
+home.addEventListener('click', () => {
+    if (c === 0) {
+    c += 1;
+    onTrending();
+}
+});
+logo.addEventListener('click', () => {
+    if (c === 0) {
+    c += 1;
+    onTrending();
+}
+});
