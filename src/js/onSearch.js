@@ -19,15 +19,15 @@ export async function onSearch(evt) {
     let page = 1;
     let totalPages = 0;
     try {
-        const arr1 = await genresList();
-        const arr2 = await movieSearchApi(page, inputQuery);
-        console.log(arr2);
-        if (arr2.results.length === 0) {
+        const arrGenres = await genresList();
+        const movies = await movieSearchApi(page, inputQuery);
+        console.log(movies);
+        if (movies.results.length === 0) {
             errorSeach.classList.remove('none');
             return
         }
-        totalPages = arr2.total_pages;
-        trendMovie.innerHTML = markup(arr1, arr2.results);
+        totalPages = movies.total_pages;
+        trendMovie.innerHTML = markup(arrGenres, movies.results);
         paginationEl.classList.remove('none');
         pagination(page, totalPages, genresList, movieSearchApi, inputQuery)
     }

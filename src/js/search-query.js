@@ -14,7 +14,7 @@ export const genresList = async () => {
 }
 
 export const moviePageApi = async (id) => {
-    const respons = await axios.get(`/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,images`);
+    const respons = await axios.get(`/3/movie/${id}?api_key=${apiKey}`);
     return respons.data;
 }
 

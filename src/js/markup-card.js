@@ -41,9 +41,8 @@ export function markup(arr1, arr2) {
         }
         return (
         `<li class="movie">
-            <a class="movie__link" href="#">
                 <div class="movie__box">
-                    <img class="movie__img"
+                    <img class="movie__img" id='${item.id}'
                      src="https://image.tmdb.org/t/p/w500${item.poster_path}"
                      alt="${item.title}"
                     />
@@ -52,7 +51,6 @@ export function markup(arr1, arr2) {
                     <h3 class="movie__title">${item.title}</h3>
                     <p class="movie__genre">${genre} | ${item.release_date.slice(0,4)}</p>
                 </div>
-            </a>
         </li>`)}).join('');
     return markup
 }

@@ -1,0 +1,228 @@
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 996px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-hidden {
+        transform: scale(1.5);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 50%;
+    translate: 50%;
+}
+
+.modal {
+    padding: 48px 20px 40px;
+    background-color: #fff;
+    width: 280px;
+}
+
+.modal__closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px;
+    fill: #131313;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal__title {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #000;
+}
+
+.modal__info {
+    margin-top: 20px;
+}
+
+.one {
+    padding-bottom: 6px;
+}
+
+.center {
+    padding-bottom: 8px;
+}
+
+.modal__item {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #8C8C8C;
+    width: 50%;
+}
+
+.vote {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    color: #fff;
+    background: #FF6B01;
+    padding: 1px 10px;
+    border-radius: 5px;
+}
+
+.votes,
+.popularity {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    color: #000;
+}
+
+.original {
+    text-transform: uppercase;
+}
+
+.original,
+.genre {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #000;
+}
+
+.modal__about {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    margin-top: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.modal__description {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    margin-top: 8px;
+    color: #000;
+}
+
+.modal__boxBtn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal__btn {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    width: 110px;
+    height: 44px;
+    color: #000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        border: none;
+        background: #FF6B01;
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal__close {
+        top: 220px;
+    }
+
+    .modal {
+        width: 704px;
+        padding: 40px 72px 40px 36px;
+        display: flex;
+    }
+
+    .modal__img {
+        width: 264px;
+        height: 374px;
+        margin-right: 68px;
+    }
+
+    .modal__title {
+        margin-top: 0;
+    }
+
+    .modal__btn {
+        width: 125px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .modal {
+        width: 806px;
+        top: 150px;
+        padding: 40px 12px;
+    }
+
+    .modal__img {
+        width: 375px;
+        height: 476px;
+        margin-right: 16px;
+    }
+
+    .modal__title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .modal__description {
+        width: 391px;
+    }
+
+    .modal__boxBtn {
+        padding-left: 8px;
+        justify-content: flex-start;
+    }
+
+    .modal__btn {
+        width: 136px;
+        margin-right: 15px;
+    }
+}
