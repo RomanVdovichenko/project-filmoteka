@@ -169,6 +169,11 @@
 }
 
 @media screen and (min-width: 768px) {
+    .backdrop {
+        position: fixed;
+    }
+
+
     .modal__close {
         top: 220px;
     }

@@ -3,7 +3,7 @@ import { pagination } from "./pagination";
 import { markup } from "./markup-card"; 
 
 const form = document.querySelector('#search-form');
-const trendMovie = document.querySelector('#trending');
+const trendMovie = document.querySelector('.movies');
 
 export async function onTrending() {
     form.elements.searchQuery.value = '';

@@ -1,5 +1,5 @@
 
-const trendMovie = document.querySelector('#trending');
+const trendMovie = document.querySelector('.movies');
 const searchBtn = document.querySelector('#search');
 const errorSeach = document.querySelector('.header__error');
 const paginationEl = document.querySelector('.pagination');

@@ -8,13 +8,14 @@ const home = document.querySelector('#trend');
 const logo = document.querySelector('#logo');
 const form = document.querySelector('#search-form');
 const openModal = document.querySelector('.movies');
+
 let c = 0;
 
 if (c === 0) {
     c += 1;
     onTrending();
 }
-console.log(c);
+
 form.addEventListener('input', () => {
     if (c !== 0) { c = 0 };
     onInput();

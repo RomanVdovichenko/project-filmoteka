@@ -5,7 +5,7 @@ import { genresList, movieSearchApi } from './search-query';
 const searchBtn = document.querySelector('#search');
 const form = document.querySelector('#search-form');
 const paginationEl = document.querySelector('.pagination');
-const trendMovie = document.querySelector('#trending');
+const trendMovie = document.querySelector('.movies');
 
 export async function onSearch(evt) {
     evt.preventDefault();

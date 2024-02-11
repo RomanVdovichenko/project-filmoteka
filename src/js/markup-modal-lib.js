@@ -1,5 +1,5 @@
 
-export function markupModal(obj) {
+export function markupModalLib(obj) {
     let genre = '';
     for (let i = 0; i < obj.genres.length; i++) {
         if (i < obj.genres.length -1 ) {
@@ -36,8 +36,7 @@ export function markupModal(obj) {
       <p class="modal__about">About</p>
       <p class="modal__description">${obj.overview}</p>
       <div class="modal__boxBtn">
-        <button class="modal__btn" type="button" data-add-watched>add to watched</button>
-        <button class="modal__btn" type="button" data-add-queue>add to queue</button>
+        <button class="modal__btn" type="button" data-delete>delete</button>
       </div>
     </div>`;
     return markup
