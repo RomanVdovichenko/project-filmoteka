@@ -17,11 +17,11 @@ export function markupModalLib(obj) {
         <tbody>
           <tr>
             <td class="modal__item one">Vote / Votes</td>
-            <td class="votes one"><span class="vote">${obj.vote_average}</span> / ${obj.vote_count}</td>
+            <td class="votes one"><span class="vote">${obj.vote_average.toFixed(1)}</span> / ${obj.vote_count}</td>
           </tr>
           <tr>
             <td class="modal__item center">Popularity</td>
-            <td class="popularity center">${obj.popularity}</td>
+            <td class="popularity center">${obj.popularity.toFixed(1)}</td>
           </tr>
           <tr>
             <td class="modal__item center">Original Title</td>

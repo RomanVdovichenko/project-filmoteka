@@ -4,9 +4,11 @@ import { markup } from "./markup-card";
 
 const form = document.querySelector('#search-form');
 const trendMovie = document.querySelector('.movies');
+const errorSearch = document.querySelector('[data-error]')
 
 export async function onTrending() {
     form.elements.searchQuery.value = '';
+    errorSearch.classList.add('none');
     let page = 1;
     let totalPages = 0;
     try {

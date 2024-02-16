@@ -19,7 +19,8 @@ export function markupLib(arr) {
           </div>
           <div class="movie__desc">
             <h3 class="movie__title">${item.title}</h3>
-            <p class="movie__genre">${genre} | ${item.date.slice(0,4)}</p>
+            <p class="movie__genre">${genre} | ${item.date.slice(0, 4)}
+            <span class="movie__vote">${item.vote.toFixed(1)}</span></p>
           </div>
         </li>`)}).join('');
   return markup

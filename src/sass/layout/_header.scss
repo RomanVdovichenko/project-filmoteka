@@ -140,14 +140,17 @@
   padding: 14px 36px 12px;
   color: #fff;
   background-color: inherit;
+
+  &:hover,
+  &:focus,
+  &.activeBtn {
+    background: #FF6B01;
+    box-shadow: 0px 8px 43px 0px #FF6B0199;
+    border: none;
+  }
 }
 
-.header-lib__btn:hover,
-.header-lib__btn:focus {
-  background: #FF6B01;
-  box-shadow: 0px 8px 43px 0px #FF6B0199;
-  border: none;
-}
+
 
 @media screen and (min-width: 768px) {
   .header {

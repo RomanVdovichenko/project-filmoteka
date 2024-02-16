@@ -6,6 +6,7 @@ const searchBtn = document.querySelector('#search');
 const form = document.querySelector('#search-form');
 const paginationEl = document.querySelector('.pagination');
 const trendMovie = document.querySelector('.movies');
+const errorSeach = document.querySelector('[data-error]')
 
 export async function onSearch(evt) {
     evt.preventDefault();

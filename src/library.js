@@ -5,16 +5,34 @@ import store from "./js/store";
 const watchedBtn = document.querySelector('[data-watched]');
 const queueBtn = document.querySelector('[data-queue]');
 const gallery = document.querySelector('#library');
-let c;
+let click;
+let count = 0;
+
+if (count === 0) {
+    count += 1;
+    onWatched();
+}
 
 
-watchedBtn.addEventListener('click', onWatched);
-queueBtn.addEventListener('click', onQueue);
+watchedBtn.addEventListener('click', () => {
+    if (count === 0) {
+        count += 1;
+        onWatched();
+    }
+});
+queueBtn.addEventListener('click', () => {
+    if (count !== 0) {
+        count = 0;
+        onQueue();
+    }
+});
 
 function onWatched() {
-    c = 0;
+    click = 'watched';
+    watchedBtn.classList.add('activeBtn');
+    queueBtn.classList.remove('activeBtn');
     const watchedList = store.load('watched') || [];
-    console.log('hello');
+    console.log('onWatched');
     if (watchedList.length === 0) {
         gallery.innerHTML = '';
         watchedBtn.removeEventListener('click', onWatched);
@@ -24,9 +42,11 @@ function onWatched() {
  };
 
 function onQueue() {
-    c = 1;
+    click = 'queue';
+    queueBtn.classList.add('activeBtn');
+    watchedBtn.classList.remove('activeBtn');
     const queueList = store.load('queue') || [];
-    console.log('goodbay');
+    console.log('onQueue');
     if (queueList.length === 0) {
         gallery.innerHTML = '';
         queueBtn.removeEventListener('click', onQueue);
@@ -35,4 +55,4 @@ function onQueue() {
     gallery.innerHTML = markupLib(queueList);
 };
  
-gallery.addEventListener('click', (evt) => modalLib(evt.target.id, c));
+gallery.addEventListener('click', (evt) => modalLib(evt.target.id, click));

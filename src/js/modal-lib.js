@@ -25,14 +25,14 @@ export async function modalLib(id, c) {
         }
         deleteBtn.addEventListener('click', onDelete);
         function onDelete() {
-            if (c === 0) {
+            if (c === 'watched') {
                 const watched = store.load('watched');
                 const watchedFilter = watched.filter(item => moviePage.id !== item.id);
                 store.save('watched', watchedFilter);
                 galleryLib.innerHTML = markupLib(watchedFilter);
             }
 
-            if (c === 1) {
+            if (c === 'queue') {
                 const queue = store.load('queue');
                 const queueFilter = queue.filter(item => moviePage.id !== item.id);
                 store.save('queue', queueFilter);

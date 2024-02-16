@@ -9,6 +9,7 @@ function data(obj) {
     img: obj.poster_path,
     date: obj.release_date,
     genres: obj.genres,
+    vote: obj.vote_average,
   }
 }
 
@@ -37,7 +38,7 @@ export async function modalOpen(id) {
     function onAddWatched() {
       const watched = store.load('watched') || [];
       const watchedId = watched.map(item => item.id);
-      console.log(watchedId);
+      console.log('onAddWatched');
       if (watchedId.includes(moviePage.id)) {
         addWatchedBtn.removeEventListener('click', onAddWatched);
         return
@@ -50,6 +51,7 @@ export async function modalOpen(id) {
     function onAddQueue() {
       const queue = store.load('queue') || [];
       const queueId = queue.map(item => item.id);
+      console.log('onAddQueue');
       if (queueId.includes(moviePage.id)) {
         addQueueBtn.removeEventListener('click', onAddQueue);
         return
