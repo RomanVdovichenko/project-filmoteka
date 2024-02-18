@@ -1,6 +1,7 @@
 import { genresList, moviesApi } from "./search-query";
 import { pagination } from "./pagination";
-import { markup } from "./markup-card"; 
+import { markup } from "./markup-card";
+import Notiflix from 'notiflix';
 
 const form = document.querySelector('#search-form');
 const trendMovie = document.querySelector('.movies');
@@ -16,6 +17,7 @@ export async function onTrending() {
         const movies = await moviesApi(page);
         console.log(movies);
         if (movies.total_pages > 0) {
+            Notiflix.Notify.info(`${movies.total_results} films found`);
             totalPages = movies.total_pages;
             trendMovie.innerHTML = markup(arrGenres, movies.results);
             pagination(page, totalPages, genresList, moviesApi);

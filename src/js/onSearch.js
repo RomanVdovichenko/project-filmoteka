@@ -1,6 +1,7 @@
 import { pagination } from './pagination';
 import { markup } from './markup-card';
 import { genresList, movieSearchApi } from './search-query';
+import Notiflix from 'notiflix';
 
 const searchBtn = document.querySelector('#search');
 const form = document.querySelector('#search-form');
@@ -28,6 +29,7 @@ export async function onSearch(evt) {
             return
         }
         totalPages = movies.total_pages;
+        Notiflix.Notify.info(`${movies.total_results} films found`);
         trendMovie.innerHTML = markup(arrGenres, movies.results);
         paginationEl.classList.remove('none');
         pagination(page, totalPages, genresList, movieSearchApi, inputQuery)

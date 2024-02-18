@@ -4,7 +4,7 @@ import store from "./js/store";
 
 const watchedBtn = document.querySelector('[data-watched]');
 const queueBtn = document.querySelector('[data-queue]');
-const gallery = document.querySelector('#library');
+const gallery = document.querySelector('[data-library]');
 let click;
 let count = 0;
 

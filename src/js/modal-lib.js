@@ -4,14 +4,17 @@ import { markupModalLib } from "./markup-modal-lib";
 import { moviePageApi } from "./search-query";
 import store from "./store";
 
-const galleryLib = document.querySelector('#library');
+const galleryLib = document.querySelector('[data-library]');
 
 export async function modalLib(id, c) {
+    if (!id) return;
     const refs = {
     closeModalBtn: document.querySelector('[data-modal-close]'),
     backdrop: document.querySelector('[data-modal]'),
     modal: document.querySelector('.modal'),
     };
+
+    let count = 0;
     
     try {
         const moviePage = await moviePageApi(id);
@@ -20,8 +23,15 @@ export async function modalLib(id, c) {
         refs.modal.innerHTML = markupModalLib(moviePage);
         const deleteBtn = document.querySelector('[data-delete]');
         refs.closeModalBtn.addEventListener('click', closeModal);
+        document.addEventListener('keydown', evt => {
+                if (evt.code === 'Escape' && count === 0) {
+                    closeModal();    
+                    console.log('Escape');
+                }
+            });
         function closeModal() {
             refs.backdrop.classList.add('is-hidden');
+            count += 1;
         }
         deleteBtn.addEventListener('click', onDelete);
         function onDelete() {

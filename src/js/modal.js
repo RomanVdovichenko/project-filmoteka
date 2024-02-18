@@ -1,3 +1,4 @@
+import Notiflix from "notiflix";
 import { markupModal } from "./markup-modal";
 import { moviePageApi } from "./search-query";
 import store from './store';
@@ -14,11 +15,14 @@ function data(obj) {
 }
 
 export async function modalOpen(id) {
+  if (!id) return;
   const refs = {
     closeModalBtn: document.querySelector('[data-modal-close]'),
     backdrop: document.querySelector('[data-modal]'),
     modal: document.querySelector('.modal'),
   };
+
+  let count = 0;
 
   try {
     const moviePage = await moviePageApi(id);
@@ -28,8 +32,15 @@ export async function modalOpen(id) {
     const addWatchedBtn = document.querySelector('[data-add-watched]');
     const addQueueBtn = document.querySelector('[data-add-queue]');
     refs.closeModalBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', evt => {
+      if (evt.code === 'Escape' && count === 0) {
+        closeModal();
+        console.log('Escape');
+      }
+    });
     function closeModal() {
       refs.backdrop.classList.add('is-hidden');
+      count += 1;
     }
 
     addWatchedBtn.addEventListener('click', onAddWatched);
@@ -46,6 +57,7 @@ export async function modalOpen(id) {
       watched.push(data(moviePage));
       store.save('watched', watched);
       addWatchedBtn.removeEventListener('click', onAddWatched);
+      Notiflix.Notify.info('movie added to watched');
       }
 
     function onAddQueue() {
@@ -59,6 +71,7 @@ export async function modalOpen(id) {
       queue.push(data(moviePage));  
       store.save('queue', queue);
       addQueueBtn.removeEventListener('click', onAddQueue);
+      Notiflix.Notify.info('movie added to queue');
     }
   }
   catch (err) {

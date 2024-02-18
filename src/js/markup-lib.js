@@ -12,8 +12,9 @@ export function markupLib(arr) {
     return (
       `<li class="movie">
           <div class="movie__box">
-            <img class="movie__img" id='${item.id}'
-              src="https://image.tmdb.org/t/p/w500${item.img}"
+            <img class="lazyload movie__img" id='${item.id}'
+              src="./images/Rectangle.png"
+              data-src="https://image.tmdb.org/t/p/w500${item.img}"
               alt="${item.title}"
             />
           </div>
