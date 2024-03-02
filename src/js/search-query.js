@@ -33,5 +33,10 @@ export const movieSearchApi = async (page, search) => {
     return respons.data;
 }
 
+export const movieVideosApi = async (id) => {
+    const respons = await axios.get(`/3/search/movie/${id}/videos?api_key=${apiKey}`);
+    return respons.data;
+}
+
 // &append_to_response=videos,images
 // https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg
