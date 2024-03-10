@@ -6,6 +6,10 @@ import Notiflix from 'notiflix';
 const form = document.querySelector('#search-form');
 const trendMovie = document.querySelector('.movies');
 const errorSearch = document.querySelector('[data-error]')
+// const obj = {
+//     page: 4,
+//     total_pages: 50
+// }
 
 export async function onTrending(page = 1) {
     const name = 'trend';
@@ -19,9 +23,9 @@ export async function onTrending(page = 1) {
             if (movies.page === 1) {
                Notiflix.Notify.info(`${movies.total_results} films found`); 
             }
-            totalPages = movies.total_pages;
             trendMovie.innerHTML = markup(arrGenres, movies.results);
             pagination(movies, name);
+            // pagination(obj, name);
         }
     }
     catch (err) {

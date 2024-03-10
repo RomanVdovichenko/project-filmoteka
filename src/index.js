@@ -1,4 +1,3 @@
-
 import { onTrending } from './js/onTrending';
 import { onSearch } from './js/onSearch';
 import { onInput } from './js/onInput';
@@ -15,9 +14,9 @@ if (c === 0) {
     c += 1;
     onTrending();
 }
-
+ 
 form.addEventListener('input', () => {
-    if (c !== 0) { c = 0 };
+    c = 0;
     onInput();
 });
 form.addEventListener('submit', onSearch);
@@ -25,13 +24,13 @@ home.addEventListener('click', () => {
     if (c === 0) {
     c += 1;
     onTrending();
-    }
+}
 });
 logo.addEventListener('click', () => {
     if (c === 0) {
     c += 1;
     onTrending();
-    }
+}
 });
 
 openModal.addEventListener('click', (evt) => modalOpen(evt.target.id));
