@@ -64,7 +64,7 @@ export async function pagination({page, total_pages}, value) {
             total.name = `${total_pages}`;
         }
         if ((total_pages - page) <= 5) {
-            for (let i = page; i <= total_pages; i++) {
+            for (let i = total_pages - 5; i <= total_pages; i++) {
                 const btnEl = document.createElement('button');
                 btnEl.type = 'button';
                 btnEl.textContent = `${i}`;
