@@ -14,7 +14,6 @@ export async function onTrending(page = 1) {
     try {
         const arrGenres = await genresList();
         const movies = await moviesApi(page);
-        console.log(movies);
         if (movies.total_pages > 0) {
             if (movies.page === 1) {
                Notiflix.Notify.info(`${movies.total_results} films found`); 

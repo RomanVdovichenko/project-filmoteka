@@ -26,7 +26,6 @@ export async function modalOpen(id) {
 
   try {
     const moviePage = await moviePageApi(id);
-    console.log(moviePage);
     refs.backdrop.classList.remove('is-hidden');
     refs.modal.innerHTML = markupModal(moviePage);
     const addWatchedBtn = document.querySelector('[data-add-watched]');
@@ -35,7 +34,6 @@ export async function modalOpen(id) {
     document.addEventListener('keydown', evt => {
       if (evt.code === 'Escape' && count === 0) {
         closeModal();
-        console.log('Escape');
       }
     });
     function closeModal() {

@@ -32,7 +32,6 @@ function onWatched() {
     watchedBtn.classList.add('activeBtn');
     queueBtn.classList.remove('activeBtn');
     const watchedList = store.load('watched') || [];
-    console.log('onWatched');
     if (watchedList.length === 0) {
         gallery.innerHTML = '';
         watchedBtn.removeEventListener('click', onWatched);
@@ -46,7 +45,6 @@ function onQueue() {
     queueBtn.classList.add('activeBtn');
     watchedBtn.classList.remove('activeBtn');
     const queueList = store.load('queue') || [];
-    console.log('onQueue');
     if (queueList.length === 0) {
         gallery.innerHTML = '';
         queueBtn.removeEventListener('click', onQueue);

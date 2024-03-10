@@ -6,7 +6,6 @@ const paginationEl = document.querySelector('.pagination');
 let page = 1;
 let trend = 0;
 export async function onPagination(evt) {
-    console.log(evt.target.className);
     if (evt.target.className === 'pagination__itemBtn') {
         page = Number(evt.target.name);
     }

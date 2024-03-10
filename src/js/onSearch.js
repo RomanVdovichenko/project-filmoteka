@@ -12,7 +12,6 @@ export async function onSearch(evt, page = 1) {
     evt.preventDefault();
     searchBtn.setAttribute('disabled', '');
     let inputQuery = form.elements.searchQuery.value.trim();
-    console.log(inputQuery);
     const name = 'search';
     if (!inputQuery) {
         errorSearch.classList.remove('none');
@@ -21,7 +20,6 @@ export async function onSearch(evt, page = 1) {
     try {
         const arrGenres = await genresList();
         const movies = await movieSearchApi(page, inputQuery);
-        console.log(movies);
         if (movies.results.length === 0) {
             errorSearch.classList.remove('none');
             return

@@ -18,7 +18,6 @@ export async function modalLib(id, c) {
     
     try {
         const moviePage = await moviePageApi(id);
-        console.log(moviePage);
         refs.backdrop.classList.remove('is-hidden');
         refs.modal.innerHTML = markupModalLib(moviePage);
         const deleteBtn = document.querySelector('[data-delete]');
